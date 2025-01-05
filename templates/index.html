@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rice Plant Disease Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search for Rice Plant Disease Information</h1>
+        <div class="box">
+            <form action="/" method="POST">
+                <label for="query">Enter Search Query:</label>
+                <input type="text" name="query" id="query" placeholder="Type your query here..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
