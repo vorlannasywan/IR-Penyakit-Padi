@@ -1,3 +1,6 @@
+import nltk
+nltk.data.path.append('/run/media/zuniaxe/Data/IR-Penyakit-Padi/venv/nltk_data')  # Jalur yang sesuai
+
 from flask import Flask, render_template, request
 import os
 import re

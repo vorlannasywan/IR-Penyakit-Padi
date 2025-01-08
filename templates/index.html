@@ -7,15 +7,67 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+            <ul class="alphabet">
+                <li><img src="{{ url_for('static', filename='images/A.svg') }}" alt="Circle Image A"></li>
+                <li><img src="{{ url_for('static', filename='images/D.svg') }}" alt="Circle Image D"></li>
+                <li><img src="{{ url_for('static', filename='images/K.svg') }}" alt="Circle Image K"></li>
+                <li><img src="{{ url_for('static', filename='images/V.svg') }}" alt="Circle Image V"></li>
+                <li><img src="{{ url_for('static', filename='images/A1.svg') }}" alt="Circle Image A"></li>
+                <li><img src="{{ url_for('static', filename='images/D1.svg') }}" alt="Circle Image D"></li>
+                <li><img src="{{ url_for('static', filename='images/K1.svg') }}" alt="Circle Image K"></li>
+                <li><img src="{{ url_for('static', filename='images/V1.svg') }}" alt="Circle Image V"></li>
+                <li><img src="{{ url_for('static', filename='images/A.svg') }}" alt="Circle Image A"></li>
+                <li><img src="{{ url_for('static', filename='images/D.svg') }}" alt="Circle Image D"></li>
+                <li><img src="{{ url_for('static', filename='images/K.svg') }}" alt="Circle Image K"></li>
+                <li><img src="{{ url_for('static', filename='images/V.svg') }}" alt="Circle Image V"></li>
+                <li><img src="{{ url_for('static', filename='images/A1.svg') }}" alt="Circle Image A"></li>
+                <li><img src="{{ url_for('static', filename='images/D1.svg') }}" alt="Circle Image D"></li>
+                <li><img src="{{ url_for('static', filename='images/K1.svg') }}" alt="Circle Image K"></li>
+                <li><img src="{{ url_for('static', filename='images/V1.svg') }}" alt="Circle Image V"></li>
+            </ul>
+    </div >
     <div class="container">
-        <h1>Search for Rice Plant Disease Information</h1>
+        <h1>Search for <span>Rice Plant Disease Information</span></h1>
         <div class="box">
             <form action="/" method="POST">
-                <label for="query">Enter Search Query:</label>
                 <input type="text" name="query" id="query" placeholder="Type your query here..." required>
                 <button type="submit">Search</button>
             </form>
         </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <img src="{{ url_for('static', filename='images/NLTK.svg') }}" style="margin: 0;" alt="Circle Image V">
+        </div>
+        
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const listItems = document.querySelectorAll(".alphabet li");
+    
+            listItems.forEach((item) => {
+                setInterval(() => {
+                    // Set posisi acak secara langsung tanpa transisi
+                    const x = Math.random() * (window.innerWidth - 50) + "px";
+                    const y = Math.random() * (window.innerHeight - 50) + "px";
+    
+                    // Update posisi dengan gaya langsung
+                    item.style.left = x;
+                    item.style.top = y;
+                }, 3000); // Interval sinkron dengan durasi animasi (3 detik)
+            });
+        });
+    </script>
 </body>
 </html>

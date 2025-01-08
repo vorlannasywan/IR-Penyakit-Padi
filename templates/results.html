@@ -3,76 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Results for "{{ query }}"</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Search Results for "dummy query"</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='result.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Results for "{{ query }}"</h1>
-
-        <div class="box">
-            <h2>Top 5 Ranked Documents:</h2>
+    <div class="main-container">
+        <div class="sidebar">
+            <h2>Top 5 Ranked Documents</h2>
             <ul>
                 {% for doc in ranked_results %}
                     <li>{{ doc['title'] }}</li>
                 {% endfor %}
             </ul>
+            <a href="/" class="btn">Go Back</a>
         </div>
 
-        <div class="box">
-            <h2>Gejala (Symptoms):</h2>
-            <ul>
-                {% for item in descriptions.gejala[:3] %}
-                    <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
+        <div class="content">
+            <h1>Results for "{{ query }}"</h1>
+
+            <div class="box">
+                <h2>Gejala (Symptoms):</h2>
+                <ul>
+                    {% for item in descriptions.gejala[:3] %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="box">
+                <h2>Penyebab (Causes):</h2>
+                <ul>
+                    {% for item in descriptions.penyebab[:3] %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="box">
+                <h2>Pencegahan (Prevention):</h2>
+                <ul>
+                    {% for item in descriptions.pencegahan[:3] %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="box">
+                <h2>Pengertian (Definition):</h2>
+                <ul>
+                    {% for item in descriptions.pengertian[:3] %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
-
-        <div class="box">
-            <h2>Penyebab (Causes):</h2>
-            <ul>
-                {% for item in descriptions.penyebab[:3] %}
-                    <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="box">
-            <h2>Pencegahan (Prevention):</h2>
-            <ul>
-                {% for item in descriptions.pencegahan[:3] %}
-                    <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <div class="box">
-            <h2>Pengertian (Definition):</h2>
-            <ul>
-                {% for item in descriptions.pengertian[:3] %}
-                    <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-
-        <!-- <div class="box">
-            <h3>Metrics for Retrieval Results</h3>
-            <ul>
-                {% for disease, metrics in metrics.items() %}
-                    <li>
-                        <strong>{{ disease }}</strong>:
-                        <ul>
-                            <li>Accuracy: {{ metrics['accuracy']*100 }}%</li>
-                            <li>Precision: {{ metrics['precision']*100 }}%</li>
-                            <li>Recall: {{ metrics['recall']*100 }}%</li>
-                            <li>F1 Score: {{ metrics['f1_score']*100 }}%</li>
-                        </ul>
-                    </li>
-                {% endfor %}
-            </ul>
-        </div> -->
-
-        <a href="/" class="btn">Go Back</a>
     </div>
 </body>
 </html>
